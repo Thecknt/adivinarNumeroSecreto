@@ -12,8 +12,6 @@ elementoHTML.innerHTML = texto;
 function generarNumeroSecreto() {
     let numeroGenerado = Math.floor(Math.random()*numeroMaximo+1);
 
-    console.log(numeroGenerado);
-    console.log(listaNumerosSorteados);
     if (listaNumerosSorteados.length == numeroMaximo) {
         asignarTextoElemento('p','Ya se sortearon todos los numeros posibles');
     } else {
@@ -28,7 +26,6 @@ function generarNumeroSecreto() {
 
 function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value); 
-    console.log("Cantidad de Intentos: " + intentos);
     if (numeroDeUsuario == numeroSecreto) {
        asignarTextoElemento('p',`Acertaste el Número en ${intentos} ${(intentos ===1)? 'vez' : 'veces'}!`);
        limpiarImput();
@@ -38,8 +35,7 @@ function verificarIntento(){
        if (numeroDeUsuario > numeroSecreto) {
         asignarTextoElemento('p','El Número Secreto es menor!');
        } else {
-        asignarTextoElemento('p','El Número Secreto es Mayor!');
-        
+        asignarTextoElemento('p','El Número Secreto es Mayor!'); 
        }
        intentos++;
        limpiarImput();
